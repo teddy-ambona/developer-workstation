@@ -86,7 +86,14 @@ You will also need to install Ubuntu(or any other Linux distributions) from the 
 
 # Oh My Zsh
 
-https://ohmyz.sh/#install
+Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes.
+
+To install oh-my-zsh you will need to install ZSH first:
+
+```bash
+sudo apt update && sudo apt install zsh 
+```
+[Oh My ZSH installation link](https://ohmyz.sh/#install)
 
 # Configure your Git and GitHub SSH Keys
 
