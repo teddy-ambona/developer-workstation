@@ -24,7 +24,6 @@ Also VSCode is entirely open-source whilst you would need PyCharm Professional(~
 ## How to debug your python code
 
 <img src="./img/debug_code.png" width="200"/>
-<br></br>
 
 Then select Python > Module and enter your test name (generally the name of the function you want to test) or module name if you want to run an entire file.
 
@@ -55,7 +54,6 @@ This step creates a `launch.json` file under the `.vscode` directory in your cur
 First you will need to install the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension. Then click on the double arrows at the bottom left of the window.
 
 <img src="./img/remote_containers.png" width="200"/>
-<br></br>
 
 and select `Reopen in Container`. This step will generate a `devcontainer.json` file in a `.devcontainer` directory.
 
@@ -64,6 +62,16 @@ You might as well set the following key/value pair in the `.devcontainer.json` t
 ```json
 "remoteUser": "root"
 ```
+
+# Creating a Python virtual environment
+
+```bash
+$ python -m venv venv  # This command creates a new environment
+
+$ . ./venv/bin/activate  # To use the python virtual env
+```
+
+> Pro tip: Don't forget to upgrade pip in your virtual environment with `pip install -U pip`
 
 # Docker
 
@@ -101,8 +109,8 @@ https://www.freecodecamp.org/news/git-ssh-how-to/
 
 # Run CICD locally
 
-Run Github Actions with [act](https://github.com/nektos/act)
-Run Gitlab CICD with [GitLab Runner](https://docs.gitlab.com/runner/install/)
+- Run Github Actions with [act](https://github.com/nektos/act)
+- Run Gitlab CICD with [GitLab Runner](https://docs.gitlab.com/runner/install/)
 
 # postgresql on wsl2 for windows
 
