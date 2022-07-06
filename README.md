@@ -1,4 +1,4 @@
-This document is a guide for setting up your work environment, you will find here the softwares I personally use on a day-to-day basis.
+This document is a guide for setting up your work environment, you will find here the software I personally use on a day-to-day basis.
 
 # VS Code
 
