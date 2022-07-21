@@ -19,6 +19,7 @@ Also VSCode is entirely open-source whilst you would need PyCharm Professional(~
 - [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 - [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
+- [Pytest IntelliSense](https://marketplace.visualstudio.com/items?itemName=Cameron.vscode-pytest)
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
 ## How to debug your python code
@@ -30,6 +31,8 @@ Then select Python > Module and enter your test name (generally the name of the 
 This step creates a `launch.json` file under the `.vscode` directory in your current folder.
 
 ### Running your code on your host machine
+
+#### Using launch.json
 
 ```json
 {
@@ -49,6 +52,24 @@ This step creates a `launch.json` file under the `.vscode` directory in your cur
 }
 ```
 
+#### Using Pytest extension
+
+Alternatively you could use the [Pytest IntelliSense extension](https://marketplace.visualstudio.com/items?itemName=Cameron.vscode-pytest) that gives you a much more user friendly interface.
+
+<img src="./img/debug_with_pytest.png" width="600"/>
+
+When running the remote container as root user, pytest might crash because the default python interpreter has changed. In this case you may have to specify the python interpreter path in `.vscode/settings.json` such as:
+
+```json
+{
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.defaultInterpreterPath": "/path/to/your/python/interpreter"
+}
+```
+
 ### Debugging inside a Docker container
 
 First you will need to install the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension. Then click on the double arrows at the bottom left of the window.
@@ -62,6 +83,24 @@ You might as well set the following key/value pair in the `.devcontainer.json` t
 ```json
 "remoteUser": "root"
 ```
+
+By default the extensions you install in a remote container will be lost after you rebuild it. To avoid having to reinstall everything you can specify your extensions in `.devcontainer`
+
+```json
+"customizations": {
+    "vscode": {
+        "extensions": [
+            "Cameron.vscode-pytest",
+            "ms-python.python",
+            "oleg-shilo.codemap"
+        ]
+    }
+}
+```
+
+That task is done using the `Add to devcontainer.json` option.
+
+<img src="./img/add_to_dev_container.png" width="600"/>
 
 # Creating a Python virtual environment
 
@@ -83,6 +122,13 @@ Develop with a consistent, easily reproducible toolchain on the same operating s
 Quickly swap between different, separate development environments and safely make updates without worrying about impacting your local machine.
 Make it easy for new team members / contributors to get up and running in a consistent development environment.
 Try out new technologies or clone a copy of a code base without impacting your local setup.
+
+## Docker Compose
+
+[Docker Compose CLI plugin](https://docs.docker.com/compose/install/compose-plugin/)
+
+*"Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration."
+(https://docs.docker.com/compose/)*
 
 # WSL2(Windows Subsystem for Linux)
 
