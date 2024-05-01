@@ -112,6 +112,11 @@ $ . ./venv/bin/activate  # To use the python virtual env
 
 > Pro tip: Don't forget to upgrade pip in your virtual environment with `pip install -U pip`
 
+# Ruff pre-comit hook
+An extremely fast Python linter and code formatter
+
+[Installation link](https://github.com/astral-sh/ruff?tab=readme-ov-file#usage)
+
 # Docker
 
 [Installation link](https://docs.docker.com/desktop/windows/install/)
@@ -149,6 +154,12 @@ sudo apt update && sudo apt install zsh
 ```
 [Oh My ZSH installation link](https://ohmyz.sh/#install)
 
+# ZSH-autocompletion
+
+Type 3x faster in your terminal thanks to auto-completion based on your history
+
+[Installation link](https://formulae.brew.sh/formula/zsh-autocomplete)
+
 # Configure your Git and GitHub SSH Keys
 
 https://www.freecodecamp.org/news/git-ssh-how-to/
@@ -183,3 +194,13 @@ sequenceDiagram
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
 ```
+
+# k8s
+
+[k9s](https://k9scli.io/): For quick k8s cluster interaction (you can stop typing the time-consuming kubectl commands :smiley:)
+
+<img src="./img/k9s.png" width="850"/>
+
+[popeye](https://github.com/derailed/popeye): Scans live Kubernetes cluster and reports potential issues with deployed resources and configurations
+
+<img src="./img/popeye.png" width="850"/>
