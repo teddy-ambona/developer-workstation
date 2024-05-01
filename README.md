@@ -112,7 +112,7 @@ $ . ./venv/bin/activate  # To use the python virtual env
 
 > Pro tip: Don't forget to upgrade pip in your virtual environment with `pip install -U pip`
 
-# Ruff pre-comit hook
+# Ruff pre-commit hook
 An extremely fast Python linter and code formatter
 
 [Installation link](https://github.com/astral-sh/ruff?tab=readme-ov-file#usage)
@@ -154,7 +154,7 @@ sudo apt update && sudo apt install zsh
 ```
 [Oh My ZSH installation link](https://ohmyz.sh/#install)
 
-# ZSH-autocompletion
+# Zsh-autocompletion
 
 Type 3x faster in your terminal thanks to auto-completion based on your history
 
