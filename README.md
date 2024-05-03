@@ -183,11 +183,11 @@ sudo apt update && sudo apt install zsh
 ```
 [Oh My ZSH installation link](https://ohmyz.sh/#install)
 
-# Zsh-autocompletion
+# Zsh-autosuggestion
 
-Type 3x faster in your terminal thanks to auto-completion based on your history
+Type 3x faster in your terminal thanks to auto-suggestion based on your history
 
-[Installation link](https://formulae.brew.sh/formula/zsh-autocomplete)
+[Installation link](https://formulae.brew.sh/formula/zsh-autosuggestions)
 
 # Configure your Git and GitHub SSH Keys
 
