@@ -20,6 +20,7 @@ Also VSCode is entirely open-source whilst you would need PyCharm Professional(~
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 - [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
 - [Pytest IntelliSense](https://marketplace.visualstudio.com/items?itemName=Cameron.vscode-pytest)
+- [Thunderclient](https://www.thunderclient.com/)
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
 ## How to debug your python code
@@ -117,6 +118,34 @@ An extremely fast Python linter and code formatter
 
 [Installation link](https://github.com/astral-sh/ruff?tab=readme-ov-file#usage)
 
+Create a `precommit-config.yaml` with the following content:
+
+```yaml
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.1.14
+    hooks:
+      # Run the linter.
+      - id: ruff
+        args: [ --fix ]
+      # Run the formatter.
+      - id: ruff-format
+```
+
+Top set up the pre-commit hook:
+
+```bash
+# Install the libraries
+pip install ruff pre-commit
+
+# Configure pre-commit hook for the given repo
+pre-commit install
+
+# Run code against hooks
+pre-commit run
+```
+
 # Docker
 
 [Installation link](https://docs.docker.com/desktop/windows/install/)
@@ -154,11 +183,11 @@ sudo apt update && sudo apt install zsh
 ```
 [Oh My ZSH installation link](https://ohmyz.sh/#install)
 
-# Zsh-autocompletion
+# Zsh-autosuggestion
 
-Type 3x faster in your terminal thanks to auto-completion based on your history
+Type 3x faster in your terminal thanks to auto-suggestion based on your history
 
-[Installation link](https://formulae.brew.sh/formula/zsh-autocomplete)
+[Installation link](https://formulae.brew.sh/formula/zsh-autosuggestions)
 
 # Configure your Git and GitHub SSH Keys
 
@@ -204,3 +233,7 @@ sequenceDiagram
 [popeye](https://github.com/derailed/popeye): Scans live Kubernetes cluster and reports potential issues with deployed resources and configurations
 
 <img src="./img/popeye.png" width="850"/>
+
+# API debugging
+
+[Thunderclient VS Code extension](https://www.thunderclient.com/)
